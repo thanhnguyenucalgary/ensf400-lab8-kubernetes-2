@@ -1,12 +1,10 @@
+#app-1-ingress.yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: app-1-ingress
   annotations:
     nginx.ingress.kubernetes.io/canary: "true"
-    nginx.ingress.kubernetes.io/canary-by-header: "Cookie"
-    nginx.ingress.kubernetes.io/canary-by-header-value: "app=app-2"
-    nginx.ingress.kubernetes.io/canary-by-header-pattern: "^(.*?;)?(app=app-2)(;.*)?$"
     nginx.ingress.kubernetes.io/canary-weight: "70"
 spec:
   rules:
@@ -18,4 +16,4 @@ spec:
           service:
             name: app-1-service
             port:
-              number: 8080
+              number: 3000

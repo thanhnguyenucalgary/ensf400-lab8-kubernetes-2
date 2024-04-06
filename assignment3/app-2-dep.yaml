@@ -1,10 +1,10 @@
-# app-2.yaml
+# app-2-dep.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-2-deployment
+  name: app-2-dep
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: app-2
@@ -14,8 +14,9 @@ spec:
         app: app-2
     spec:
       containers:
-      - name: app-2-container
+      - name: app-2
         image: ghcr.io/denoslab/ensf400-sample-app:v2
+        imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
 
