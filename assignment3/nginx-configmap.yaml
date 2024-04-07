@@ -1,10 +1,10 @@
-#nginx-configmap.yaml
+# #nginx-configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-configmap
 data:
-  nginx.cfg: |
+  default.conf: |
     upstream backend {
         server app-1:8080;
         server app-2:8080;
@@ -15,4 +15,3 @@ data:
             proxy_pass http://backend;
         }
     }
-

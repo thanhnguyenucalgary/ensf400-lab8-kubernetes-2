@@ -1,12 +1,14 @@
-#app-1-svc.yaml
+# app-1-svc.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-1-service
+  name: app-1
 spec:
   selector:
-    app: app-1
+    run: app-1
   ports:
     - protocol: TCP
-      port: 3000
+      port: 8080
       targetPort: 3000
+  type: ClusterIP
+

@@ -5,9 +5,8 @@ metadata:
   name: nginx-svc
 spec:
   selector:
-    app: nginx   # Select pods with the label "app: nginx"
+    app: nginx
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
-  type: ClusterIP
+      port: 80
+  # type: ClusterIP
